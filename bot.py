@@ -1,7 +1,8 @@
+import os
 import telebot
 
-TOKEN = "8115346441:AAFsNtu23eDXKfStxYzZJF3D1x6ZF7Cba0Q"
-ADMIN_ID = 8186244653  # ← твій Telegram ID
+TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -68,3 +69,4 @@ def get_hours(message):
 
 # запуск
 bot.polling(none_stop=True)
+
